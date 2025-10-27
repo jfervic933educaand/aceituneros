@@ -5,10 +5,15 @@ public class Main {
 
         int opcion = 0;
 
-        do{
+        do {
 
-            opcion = Funciones.pedirOpcion();
+            try {
+                opcion = Funciones.pedirOpcion();
+            } catch (NumberFormatException nfe) {
+                // Repite el bucle al saltar la excepción
+                opcion = 0;
+            }
 
-        } while (opcion!=2);
+        } while (opcion != 2);
     }
 }
