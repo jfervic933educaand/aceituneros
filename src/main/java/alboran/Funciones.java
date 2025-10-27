@@ -12,4 +12,6 @@ public class Funciones {
         return opcion;
     }
 
+    // Función para pedir el tipo de aceituna
+    public s
 }

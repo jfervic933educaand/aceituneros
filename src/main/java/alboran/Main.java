@@ -16,6 +16,10 @@ public class Main {
                 switch (opcion) {
                     case 1 -> {
                         // Vender
+                        // Pedir tipo
+                        // Pedir tamaño
+                        // Pedir kg
+                        // calcular
                     }
                     case 2 -> {
                         JOptionPane.showMessageDialog(null, "Hasta pronto");
