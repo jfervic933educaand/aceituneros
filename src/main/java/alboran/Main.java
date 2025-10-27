@@ -7,7 +7,7 @@ public class Main {
 
         do{
 
-            System.out.println(Mensajes.menuInicial);
+            opcion = Funciones.pedirOpcion();
 
         } while (opcion!=2);
     }

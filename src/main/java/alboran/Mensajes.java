@@ -10,6 +10,7 @@ public class Mensajes {
             Bienvenido a la almazara
             Elige una opción:
             1.- Calcular una venta
+            2.- Salir
             """;
 
 }
