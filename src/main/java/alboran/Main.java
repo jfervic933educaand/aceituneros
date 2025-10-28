@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         int opcion = 0;
+        String tipoAceituna = "";
 
         do {
 
@@ -17,6 +18,7 @@ public class Main {
                     case 1 -> {
                         // Vender
                         // Pedir tipo
+                        tipoAceituna = Funciones.pedirTipoAceituna();
                         // Pedir tamaño
                         // Pedir kg
                         // calcular
