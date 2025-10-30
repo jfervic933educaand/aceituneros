@@ -8,6 +8,7 @@ public class Main {
         int opcion = 0;
         String tipoAceituna = "";
         int tamanioAceituna = 0;
+        double kg = 0;
 
         do {
 
@@ -26,6 +27,8 @@ public class Main {
                         tamanioAceituna = Funciones.pedirTamanioAceituna();
                         System.out.println("El tamaño es " + pasarTamanioAceituna(tamanioAceituna));
                         // Pedir kg
+                        kg = Funciones.pedirKg();
+                        System.out.println("Los kg son " + kg);
                         // calcular
                     }
                     case 2 -> {
