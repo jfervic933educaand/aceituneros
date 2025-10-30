@@ -4,9 +4,13 @@ import javax.swing.JOptionPane;
 
 public class Funciones {
 
+    // Constantes de clase para el tipo
     public static final String ALORENA = "aloreña";
     public static final String PICUAL = "picual";
     public static final String HOJIBLANCA = "hojiblanca";
+    // Constantes de clase para el tamaño
+    public static final String FINA = "fina";
+    public static final String GRUESA = "gruesa";
 
     public static int pedirOpcion(){
         int opcion = 0;
@@ -25,5 +29,20 @@ public class Funciones {
         } while(!tipo.equalsIgnoreCase(HOJIBLANCA)&&!tipo.equalsIgnoreCase(ALORENA)&&!tipo.equalsIgnoreCase(PICUAL));
        
         return tipo;
+    }
+
+    // Función para pedir el tamaño
+    // Devuelve un int indicando 1 gruesa y 2 fina
+    public static int pedirTamanioAceituna(){
+        int tamanioInt=0;
+        String tamanio;
+        do{
+            tamanio = JOptionPane.showInputDialog("Introduce un tamaño de los posibles (fina o gruesa)");
+        } while(!tamanio.equalsIgnoreCase(FINA)&&!tamanio.equalsIgnoreCase(GRUESA));
+       
+        // Seguro que tamanio tiene fina o gruesa
+        tamanioInt = tamanio.equalsIgnoreCase(GRUESA)?1:2;
+        
+        return tamanioInt;
     }
 }

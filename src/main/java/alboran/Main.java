@@ -7,6 +7,7 @@ public class Main {
 
         int opcion = 0;
         String tipoAceituna = "";
+        int tamanioAceituna = 0;
 
         do {
 
@@ -19,7 +20,11 @@ public class Main {
                         // Vender
                         // Pedir tipo
                         tipoAceituna = Funciones.pedirTipoAceituna();
+                        System.out.println("El tipo es: " + tipoAceituna);
                         // Pedir tamaño
+                        // Devuelve un int indicando 1 gruesa y 2 fina
+                        tamanioAceituna = Funciones.pedirTamanioAceituna();
+                        System.out.println("El tamaño es " + pasarTamanioAceituna(tamanioAceituna));
                         // Pedir kg
                         // calcular
                     }
@@ -39,5 +44,11 @@ public class Main {
             }
 
         } while (opcion != 2);
+    }
+
+    public static String pasarTamanioAceituna(int numero){
+        String tamanio;
+        tamanio = numero == 1?Funciones.GRUESA:Funciones.FINA;
+        return tamanio;
     }
 }
