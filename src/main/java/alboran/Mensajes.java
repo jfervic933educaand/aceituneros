@@ -9,8 +9,9 @@ public class Mensajes {
     public static final String menuInicial = """
             Bienvenido a la almazara
             Elige una opción:
+            0.- Salir
             1.- Calcular una venta
-            2.- Salir
+            2.- Ver todas las ventas
             """;
 
 }
