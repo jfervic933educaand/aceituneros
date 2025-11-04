@@ -9,6 +9,7 @@ public class Main {
         String tipoAceituna = "";
         int tamanioAceituna = 0;
         double kg = 0;
+        double precioVenta = 0;
 
         do {
 
@@ -30,6 +31,10 @@ public class Main {
                         kg = Funciones.pedirKg();
                         System.out.println("Los kg son " + kg);
                         // calcular
+                        // Necesitamos: Precio inicial kg, total kg, tipo y tamaño aceituna
+                        // Devuelve: precio venta double
+                        precioVenta = Funciones.calcularPrecioVenta(Funciones.PRECIO_INICIAL, kg, pasarTamanioAceituna(tamanioAceituna), tipoAceituna);    
+                        System.out.println("El precio de venta es " + precioVenta);
                     }
                     case 2 -> {
                         JOptionPane.showMessageDialog(null, "Hasta pronto");
