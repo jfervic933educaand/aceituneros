@@ -12,7 +12,7 @@ public class Funciones {
     public static final String HOJIBLANCA = "hojiblanca";
     // Constantes de clase para el tamaño
     public static final String FINA = "fina";
-    public static final String GRUESA = "gruesa";
+    public static final String GRUESA = "Gruesa";
 
     // Necesitamos: Precio inicial kg, total kg, tipo y tamaño aceituna
     // Devuelve: precio venta double
