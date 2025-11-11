@@ -7,6 +7,7 @@ public class Main {
 
         // Variables de tipo array para guardar los datos del programa
         String[] nombre = new String[50];
+        String[] tipoAceitunas = new String[50];
 
         int opcion = 0;
         String tipoAceituna = "";
