@@ -5,6 +5,9 @@ import javax.swing.JOptionPane;
 public class Main {
     public static void main(String[] args) {
 
+        // Variables de tipo array para guardar los datos del programa
+        String[] nombre = new String[50];
+
         int opcion = 0;
         String tipoAceituna = "";
         String nombreProductor="";
