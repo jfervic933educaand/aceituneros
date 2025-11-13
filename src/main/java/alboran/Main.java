@@ -28,7 +28,7 @@ public class Main {
                 // Si continua mi programa por aquí significa
                 // que no hay excepción NumberFormat
                 switch (opcion) {
-                    case 0->{
+                    case 0 -> {
                         JOptionPane.showMessageDialog(null, "Hasta pronto");
                     }
                     case 1 -> {
@@ -37,34 +37,38 @@ public class Main {
                         nombres[contadorVentas] = JOptionPane.showInputDialog("¿Cómo te llamas?");
                         // Pedir tipo
                         tipoAceitunas[contadorVentas] = Funciones.pedirTipoAceituna();
-                        //System.out.println("El tipo es: " + tipoAceituna);
+                        // System.out.println("El tipo es: " + tipoAceituna);
                         // Pedir tamaño
                         // Devuelve un int indicando 1 gruesa y 2 fina
                         tamanioAceitunas[contadorVentas] = pasarTamanioAceituna(Funciones.pedirTamanioAceituna());
-                        //System.out.println("El tamaño es " + pasarTamanioAceituna(tamanioAceituna));
+                        // System.out.println("El tamaño es " + pasarTamanioAceituna(tamanioAceituna));
                         // Pedir kg
                         kgs[contadorVentas] = Funciones.pedirKg();
-                        //System.out.println("Los kg son " + kg);
+                        // System.out.println("Los kg son " + kg);
                         // calcular
                         // Necesitamos: Precio inicial kg, total kg, tipo y tamaño aceituna
                         // Devuelve: precio venta double
-                        preciosVenta[contadorVentas] = Funciones.calcularPrecioVenta(Funciones.PRECIO_INICIAL, kgs[contadorVentas], tamanioAceitunas[contadorVentas], tipoAceitunas[contadorVentas]);    
-                        //System.out.println("El precio de venta es " + precioVenta);
+                        preciosVenta[contadorVentas] = Funciones.calcularPrecioVenta(Funciones.PRECIO_INICIAL,
+                                kgs[contadorVentas], tamanioAceitunas[contadorVentas], tipoAceitunas[contadorVentas]);
+                        // System.out.println("El precio de venta es " + precioVenta);
 
-                        String resultado = """
-                                El vendedor %s, trae a la almazara de Estepona
-                                %s kg de aceituna %s %s y se le ha vendido a %.3f€
-                                """.formatted(nombres[contadorVentas], kgs[contadorVentas], 
-                                tamanioAceitunas[contadorVentas],tipoAceitunas[contadorVentas],
-                                 preciosVenta[contadorVentas]);
-
-                        System.out.println(resultado);     
-                        contadorVentas++;   
+                        contadorVentas++;
                     }
                     case 2 -> {
                         JOptionPane.showMessageDialog(null, "Ver todas las ventas");
+                        for (int i = 0; i < contadorVentas; i++) {
+                            String resultado = """
+                                    El vendedor %s, trae a la almazara de Estepona
+                                    %s kg de aceituna %s %s y se le ha vendido a %.2f€
+                                    """.formatted(nombres[i], kgs[i],
+                                    tamanioAceitunas[i], tipoAceitunas[i],
+                                    preciosVenta[i]);
+
+                            System.out.println(resultado);
+                        }
+
                     }
-                    
+
                     default -> {
                         JOptionPane.showMessageDialog(null, "Opción incorrecta");
                     }
@@ -79,9 +83,9 @@ public class Main {
         } while (opcion != 0);
     }
 
-    public static String pasarTamanioAceituna(int numero){
+    public static String pasarTamanioAceituna(int numero) {
         String tamanio;
-        tamanio = numero == 1?Funciones.GRUESA:Funciones.FINA;
+        tamanio = numero == 1 ? Funciones.GRUESA : Funciones.FINA;
         return tamanio;
     }
 }
