@@ -6,8 +6,15 @@ public class Main {
     public static void main(String[] args) {
 
         // Variables de tipo array para guardar los datos del programa
+        // Los arrays de objetos se crean con el contenido de cada casilla
+        // apuntando a null
         String[] nombre = new String[50];
         String[] tipoAceitunas = new String[50];
+        String[] tamanioAceitunas = new String[50];
+        // Los arrays de numeros se crean con el contenido de cada casilla
+        // a 0.0
+        double[] kgs = new double[50];
+        double[] preciosVenta = new double[50];
 
         int opcion = 0;
         String tipoAceituna = "";
