@@ -1,6 +1,8 @@
 package alboran;
 
 import javax.swing.JOptionPane;
+// Importamos la clase venta del paquete modelos
+import modelos.Venta;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,6 +10,10 @@ public class Main {
         // Variables de tipo array para guardar los datos del programa
         // Los arrays de objetos se crean con el contenido de cada casilla
         // apuntando a null
+        Venta[] ventas = new Venta[50];
+        String nombre, tipo, tamanio;
+        double kg, precioVenta;
+
         String[] nombres = new String[50];
         String[] tipoAceitunas = new String[50];
         String[] tamanioAceitunas = new String[50];
@@ -34,37 +40,41 @@ public class Main {
                     case 1 -> {
                         // Vender
                         // Pedir nombre
-                        nombres[contadorVentas] = JOptionPane.showInputDialog("¿Cómo te llamas?");
+                        nombre = JOptionPane.showInputDialog("¿Cómo te llamas?");
                         // Pedir tipo
-                        tipoAceitunas[contadorVentas] = Funciones.pedirTipoAceituna();
+                        tipo = Funciones.pedirTipoAceituna();
                         // System.out.println("El tipo es: " + tipoAceituna);
                         // Pedir tamaño
                         // Devuelve un int indicando 1 gruesa y 2 fina
-                        tamanioAceitunas[contadorVentas] = pasarTamanioAceituna(Funciones.pedirTamanioAceituna());
+                        tamanio = pasarTamanioAceituna(Funciones.pedirTamanioAceituna());
                         // System.out.println("El tamaño es " + pasarTamanioAceituna(tamanioAceituna));
                         // Pedir kg
-                        kgs[contadorVentas] = Funciones.pedirKg();
+                        kg = Funciones.pedirKg();
                         // System.out.println("Los kg son " + kg);
                         // calcular
                         // Necesitamos: Precio inicial kg, total kg, tipo y tamaño aceituna
                         // Devuelve: precio venta double
-                        preciosVenta[contadorVentas] = Funciones.calcularPrecioVenta(Funciones.PRECIO_INICIAL,
-                                kgs[contadorVentas], tamanioAceitunas[contadorVentas], tipoAceitunas[contadorVentas]);
+                        precioVenta= Funciones.calcularPrecioVenta(Funciones.PRECIO_INICIAL,
+                                kg, tamanio, tipo);
                         // System.out.println("El precio de venta es " + precioVenta);
-
+                        Venta venta = new Venta(nombre, tamanio, tipo, kg);
+                        //venta.mostrarValores();
+                        // Se guarda en un array de ventas la venta creada
+                        ventas[contadorVentas] = venta;
                         contadorVentas++;
                     }
                     case 2 -> {
                         JOptionPane.showMessageDialog(null, "Ver todas las ventas");
                         for (int i = 0; i < contadorVentas; i++) {
-                            String resultado = """
-                                    El vendedor %s, trae a la almazara de Estepona
-                                    %s kg de aceituna %s %s y se le ha vendido a %.2f€
-                                    """.formatted(nombres[i], kgs[i],
-                                    tamanioAceitunas[i], tipoAceitunas[i],
-                                    preciosVenta[i]);
+                            // String resultado = """
+                            //         El vendedor %s, trae a la almazara de Estepona
+                            //         %s kg de aceituna %s %s y se le ha vendido a %.2f€
+                            //         """.formatted(nombres[i], kgs[i],
+                            //         tamanioAceitunas[i], tipoAceitunas[i],
+                            //         preciosVenta[i]);
+                            ventas[i].mostrarValores();
 
-                            System.out.println(resultado);
+                            //System.out.println(resultado);
                         }
 
                     }
