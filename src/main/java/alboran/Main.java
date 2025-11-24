@@ -14,14 +14,6 @@ public class Main {
         String nombre, tipo, tamanio;
         double kg, precioVenta;
 
-        String[] nombres = new String[50];
-        String[] tipoAceitunas = new String[50];
-        String[] tamanioAceitunas = new String[50];
-        // Los arrays de numeros se crean con el contenido de cada casilla
-        // a 0.0
-        double[] kgs = new double[50];
-        double[] preciosVenta = new double[50];
-
         // Variable para controlar las posiciones de los arrays
         // Empieza introduciendo la primera venta en la posición cero, luego la 1 ,...
         int contadorVentas = 0;
@@ -57,7 +49,7 @@ public class Main {
                         precioVenta= Funciones.calcularPrecioVenta(Funciones.PRECIO_INICIAL,
                                 kg, tamanio, tipo);
                         // System.out.println("El precio de venta es " + precioVenta);
-                        Venta venta = new Venta(nombre, tamanio, tipo, kg);
+                        Venta venta = new Venta(nombre, tamanio, tipo, kg, precioVenta);
                         //venta.mostrarValores();
                         // Se guarda en un array de ventas la venta creada
                         ventas[contadorVentas] = venta;
@@ -72,7 +64,7 @@ public class Main {
                             //         """.formatted(nombres[i], kgs[i],
                             //         tamanioAceitunas[i], tipoAceitunas[i],
                             //         preciosVenta[i]);
-                            ventas[i].mostrarValores();
+                            System.out.println(ventas[i]);
 
                             //System.out.println(resultado);
                         }
